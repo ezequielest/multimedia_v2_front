@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title>My App</title>
+  <link rel="stylesheet" href="css/framework7.ios.min.css">
+  <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="theme-dark color-theme-red">
+  <div id="app">
+    <!-- Statusbar -->
+    <!-- NOTE: You may need to comment out the next line depending on what device you're running on and see the app title cut off -->
+    <f7-statusbar></f7-statusbar>
+
+    <!-- Left Panel -->
+    <!--<f7-panel left reveal layout="dark">
+      <f7-view id="left-panel-view" navbar-through :dynamic-navbar="true">
+        <f7-navbar title="Left Panel"></f7-navbar>
+        <f7-pages>
+          <f7-page>
+            <f7-block inner>
+              <p>Left panel content goes here</p>
+            </f7-block>
+            <f7-block-title>Load page in panel</f7-block-title>
+            <f7-list>
+              <f7-list-item link="/about/" title="About"></f7-list-item>
+              <f7-list-item link="/form/" title="Form"></f7-list-item>
+            </f7-list>
+            <f7-block-title>Load page in main view</f7-block-title>
+            <f7-list>
+              <f7-list-item link="/about/" title="About" link-view="#main-view" link-close-panel></f7-list-item>
+              <f7-list-item link="/form/" title="Form" link-view="#main-view" link-close-panel></f7-list-item>
+            </f7-list>
+          </f7-page>
+        </f7-pages>
+      </f7-view>
+    </f7-panel>-->
+
+    <!-- Right Panel -->
+    <f7-panel right cover layout="dark">
+      <f7-view id="right-panel-view" navbar-through :dynamic-navbar="true">
+        <f7-navbar title="Información" sliding></f7-navbar>
+        <f7-pages>
+          <f7-page>
+            <f7-block>
+              <p>Datos útiles</p>
+            </f7-block>
+            <f7-block-title>Admin Ezequiel</f7-block-title>
+            <f7-list>
+              <f7-list-item>Tel. 2236 344935</f7-list-item>
+              <f7-list-item>Dir. Guido 1062 2B</f7-list-item>
+            </f7-list>
+            <f7-block-title>Integrantes del equipo</f7-block-title>
+            <f7-list>
+              <f7-list-item link-close-panel>María</f7-list-item>
+              <f7-list-item link-close-panel>Belen</f7-list-item>
+              <f7-list-item link-close-panel>Kathy</f7-list-item>
+              <f7-list-item link-close-panel>Gabriel</f7-list-item>
+              <f7-list-item link-close-panel>Carina</f7-list-item>
+              <f7-list-item link-close-panel>Ezequiel</f7-list-item>
+            </f7-list>
+          </f7-page>
+        </f7-pages>
+      </f7-view>
+    </f7-panel>
+
+    <!-- Main Views -->
+    <f7-views>
+      <f7-view id="main-view" navbar-through :dynamic-navbar="true" main>
+        <!-- Navbar -->
+        <f7-navbar>
+          <!--<f7-nav-left>
+            <f7-link open-panel="left"><div style="font-size:25px; color:#fff"><i class="fas fa-bars"></i></div></f7-link>
+          </f7-nav-left>-->
+          <f7-nav-center sliding> MULTIMEDIA APP</f7-nav-center>
+          <f7-nav-right>
+            <f7-link open-panel="right"><div style="font-size:25px; color:#fff"><i class="far fa-address-book"></i></i></div></f7-link>
+          </f7-nav-right>
+        </f7-navbar>
+        <!-- Pages -->
+        <f7-pages id="principal">
+          <f7-page>
+            <f7-block-title><h3><i class="fas fa-mobile-alt"></i> Lista EQUIPO MULTIMEDIA</h3></f7-block-title>
+            <f7-block inner>
+              <div v-for="(value, key, index) in datos"><span id="headerYear">{{ key }}</span>
+                <div id="month" v-for="(value, key2, index) in datos[key]"><span id="headerMonth">{{ key2 | devolverMes }}</span>
+                <f7-accordion>
+                  <!-- Item 1 -->
+                  <f7-accordion-item  v-for="(value, key2, index) in datos[key][key2]">
+                    <f7-accordion-toggle><span class="badge color-blue">{{value.fecha  | formatFecha }}</span> | {{value.nombre}}</f7-accordion-toggle>
+                    <f7-accordion-content>{{value.mensaje}}</f7-accordion-content>
+                  </f7-accordion-item>
+                </f7-accordion>
+                </div>
+              </div>
+            </f7-block>
+      
+          </f7-page>
+        </f7-pages>
+      </f7-view>
+    </f7-views>
+
+  <script src="cordova.js"></script>
+  <script src="js/framework7.min.js"></script>
+  <script src="js/vue.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="js/framework7-vue.min.js"></script>
+  <script src="js/moments.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

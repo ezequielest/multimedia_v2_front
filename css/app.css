@@ -1,0 +1,38 @@
+/* =========
+Your custom styles go here
+ ========= */
+
+ #headerYear{
+    display: block;
+    font-size: 40px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+ }
+
+ #headerMonth{
+    display: block;
+    background: #dd0000;
+    font-size: 32px;
+    color: #fff;
+    text-align: center;
+ }
+
+ .navbar{
+    background: #007aff;
+    color: #fff;
+ }
+
+ #principal .page{
+  background: #f9f9f9 !important;
+ }
+
+ .navbar .icon{
+     color: #fff !important;
+ }
+
+ .accordion-item-toggle{
+     padding: 10px; 
+     border-bottom: 1px solid #ddd;
+     font-size: 20px;
+     
+ }
