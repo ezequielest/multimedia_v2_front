@@ -38,7 +38,7 @@ new Vue({
   },
   created() {
     //axios.get(`http://127.0.0.1:8000/actividades/listaActividadesAjax`)
-    axios.get(`http://multimedia.idd/actividades/listaActividadesAjax`)
+    axios.get(`https://www.iddcielosabiertos.com/multimedia/public/actividades/listaActividadesAjax`)
     .then(response => {
       // JSON responses are automatically parsed.
       console.log(response);
