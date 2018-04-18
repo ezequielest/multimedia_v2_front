@@ -36,3 +36,27 @@ Your custom styles go here
      font-size: 20px;
      
  }
+
+ /*
+  Set the color of the icon
+*/
+
+#load{
+    padding: 30px 50px;
+}
+
+#load h3{
+
+    display: inline;
+}
+
+.loader{
+    display: inline;
+}
+
+#load svg path,
+#load svg rect{
+    position: relative;
+    top: 50px;
+    fill: #FF6700;
+}

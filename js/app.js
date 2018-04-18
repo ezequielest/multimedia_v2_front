@@ -25,7 +25,7 @@ Vue.component('page-dynamic-routing', {
 // Handle device ready event
 // Note: You may want to check out the vue-cordova package on npm for cordova specific handling with vue - https://www.npmjs.com/package/vue-cordova
 document.addEventListener('deviceready', () => {
-  console.log("DEVICE IS READY!");    
+  console.log("DEVICE IS READY!");  
 }, false)
 
 // Init App
@@ -40,6 +40,8 @@ new Vue({
     //axios.get(`http://127.0.0.1:8000/actividades/listaActividadesAjax`)
     axios.get(`https://www.iddcielosabiertos.com/multimedia/public/actividades/listaActividadesAjax`)
     .then(response => {
+      document.getElementById('load').style.display = "none";
+      document.getElementById('app').style.display = "block";
       // JSON responses are automatically parsed.
       console.log(response);
       this.datos = response.data.actividades
