@@ -104,10 +104,12 @@
                 <div id="month" v-for="(value, key2, index) in datos[key]"><span id="headerMonth">{{ key2 | devolverMes }}</span>
                 <f7-accordion>
                   <!-- Item 1 -->
-                  <f7-accordion-item  v-for="(value, key2, index) in datos[key][key2]">
+                  <div  v-for="(value, key3, index) in datos[key][key2]"></f7-accordion-item>
+                  <f7-accordion-item  v-for="value in datos[key][key2][key3]">
                     <f7-accordion-toggle><span class="badge color-blue">{{value.fecha  | formatFecha }}</span> | {{value.nombre}}</f7-accordion-toggle>
                     <f7-accordion-content>{{value.mensaje}}</f7-accordion-content>
                   </f7-accordion-item>
+                  </div>
                 </f7-accordion>
                 </div>
               </div>
