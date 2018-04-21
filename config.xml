@@ -7,7 +7,7 @@
     <author email="ezequielestigarribia@gmail.com" href="http://cordova.io">
         Ezequiel Estigarribia
     </author>
-    <icon density="mdpi" height="57" platform="ios" src="img/logo.png" width="57" />
+    <icon src="img/logo.png"/>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
